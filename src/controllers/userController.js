@@ -44,7 +44,7 @@ exports.loginUser = async (req, res) => {
     }
 
     // Generate a JSON Web Token (JWT)
-    const token = jwt.sign({ username: existingUser.username }, 'your-secret-key', { expiresIn: '1h' });
+    const token = jwt.sign({ username: existingUser.username }, '3521cde9608cb865a12b1ce276c7860588b988e5f82f0b5b2ce1f48636b4473d', { expiresIn: '1h' });
 
     return res.status(200).json({ token });
   } catch (error) {
