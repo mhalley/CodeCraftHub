@@ -6,7 +6,7 @@ const userRoutes = require('./routes/userRoutes');
 const app = express();
 
 // Connect to MongoDB
-**
+/**
  * Connects to the MongoDB database using the `connectDB` function.
  * This function establishes a connection to MongoDB, enabling the application to perform database operations.
  * 
