@@ -3,6 +3,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 // User registration
+/**
+ * Registers a new user.
+ * - Checks if the username already exists.
+ * - Hashes the password and saves the user to the database.
+ * - Responds with a success message or an error message.
+ * @param {Object} req - The request object containing user details.
+ * @param {Object} res - The response object.
+ */
 exports.registerUser = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -27,6 +35,15 @@ exports.registerUser = async (req, res) => {
 };
 
 // User login
+/**
+ * Logs in a user.
+ * - Checks if the username exists.
+ * - Verifies the password.
+ * - Generates a JWT token if login is successful.
+ * - Responds with a token or an error message.
+ * @param {Object} req - The request object containing user credentials.
+ * @param {Object} res - The response object.
+ */
 exports.loginUser = async (req, res) => {
   try {
     const { username, password } = req.body;
@@ -53,6 +70,13 @@ exports.loginUser = async (req, res) => {
 };
 
 // User profile management
+/**
+ * Updates the user's profile.
+ * - Updates the username of an existing user.
+ * - Responds with a success message or an error message.
+ * @param {Object} req - The request object containing the new username.
+ * @param {Object} res - The response object.
+ */
 exports.updateUserProfile = async (req, res) => {
   try {
     const { username } = req.params;
